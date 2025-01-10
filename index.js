@@ -2,7 +2,12 @@ import { Handlebars } from '../../../../../lib.js';
 
 Handlebars.registerHelper("isGroup", function() {
     const groupId = SillyTavern.getContext().groupId;
-    return groupId != null ? groupId : "";
+    return groupId != null ? true : "";
+});
+
+Handlebars.registerHelper("notGroup", function() {
+    const groupId = SillyTavern.getContext().groupId;
+    return groupId == null ? true : "";
 });
 
 Handlebars.registerHelper("eq", function(value_a, value_b) {
