@@ -1,5 +1,10 @@
 import { Handlebars } from '../../../../../lib.js';
 
+Handlebars.registerHelper("isGroup", function() {
+    const groupId = SillyTavern.getContext().groupId;
+    return groupId != null ? groupId : "";
+});
+
 Handlebars.registerHelper("eq", function(value_a, value_b) {
     return value_a == value_b;
 });
